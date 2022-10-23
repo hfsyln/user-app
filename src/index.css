@@ -218,3 +218,9 @@ p {
 .body-tr {
   height: 40px;
 }
+
+.card {
+  border: solid red;
+  width: 50vw;
+  margin: auto;
+}
