@@ -49,8 +49,25 @@ function App() {
    console.log(userInfo);
   
    useEffect(()=>{
-       getUser()
+       
+      getUser()
+       
+       const items = JSON.parse(localStorage.getItem('items')); //açlışta localden alma ve doma basma
+       console.log(items);
+       if (items) {
+         setData(items);
+       }
    },[])
+
+   const clearUser = () => {
+    setData([])
+
+  }
+
+   useEffect(() => {
+    
+    localStorage.setItem('items', JSON.stringify(data)); //data da gerçekleşen her değişime göre locali güncelleme örn silme
+  }, [data])
   
 
 
@@ -58,7 +75,7 @@ function App() {
   return (
     <>
       <div>
-        <Person userInfo = {userInfo} getUser = {getUser} addUser={addUser}/>
+        <Person userInfo = {userInfo} getUser = {getUser} addUser={addUser} clearUser ={clearUser}/>
       </div>
       <div>
         <Card addUser={addUser} data = {data}/>

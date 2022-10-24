@@ -10,7 +10,7 @@ import padlockSvg from "../../assets/padlock.svg";
 import cwSvg from "../../assets/cw.svg"
 import { useState } from 'react';
 
-const Person = ({userInfo, getUser, addUser}) => {
+const Person = ({userInfo, getUser, addUser, clearUser}) => {
 
     
     const defaultImage = "https://randomuser.me/api/portraits/men/75.jpg";
@@ -63,6 +63,9 @@ const Person = ({userInfo, getUser, addUser}) => {
           </button>
           <button className="btn" type="button" onClick={addUser} >
             add user 
+          </button>
+          <button className="btn" type="button" onClick={clearUser} >
+              Clear All
           </button>
         </div>
 
